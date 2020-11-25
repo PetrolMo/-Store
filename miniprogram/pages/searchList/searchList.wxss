@@ -1,10 +1,9 @@
 /* pages/home/home.wxss */
-page {
+page{
   height: 100%;
   width: 100%;
 }
-
-.toTop {
+.toTop{
   position: fixed;
   right: 0;
   bottom: 0;
@@ -12,173 +11,127 @@ page {
   width: 15vw;
   height: 15vw;
 }
-
-.toTop image {
+.toTop image{
   width: 15vw;
   height: 15vw;
 }
-
-.scrollView {
+.scrollView{
   width: 90%;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 5%;
 }
-
-.scrollContainer {
+.scrollContainer{
   width: 750rpx;
-  display: flex;
+  display:flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.search {
-  width: 750rpx;
-}
 
-.floatCard {
-  display: flex;
-  flex-direction: row;
-  height: 100rpx;
-  height: 45%;
-}
-
-.cradImg image {
-  width: 15vw;
-  height: 15vw;
-  border-radius: 100%;
-}
-
-.container {
+.container{
   width: 46%;
-  height: 40%;
+  height: 32%;
   display: flex;
   margin: 3% 0;
   border-radius: 25px;
-  box-shadow: 0px 2px 20px 1px #7c7c7c;
+  box-shadow:0px 2px 20px 1px #7c7c7c;
   position: relative;
 }
-
-image {
+image{
   border-radius: 25px 25px 0 0;
   width: 100%;
   height: 75%;
   position: absolute;
 }
-
-.blockContainer {
+.blockContainer{
   position: absolute;
   width: 100%;
   height: 25%;
-  background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgb(255, 255, 255, 0));
+  background:linear-gradient(to top,rgb(0,0,0,0.8),rgb(255,255,255,0));
   z-index: 500;
   bottom: 25%;
 }
-
-.bottomContainer {
+.bottomContainer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 25%;
+  height:25% ;
   position: absolute;
-  background-color: #f2f2f2;
+  background-color:#f2f2f2;
   border-radius: 0 0 25px 25px;
   z-index: 10;
   bottom: 0;
 }
-
-.price {
+.price{
   display: flex;
   width: 40%;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
-  font-family: microsoft yahei;
+  font-family:microsoft yahei;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   margin-top: 5rpx;
 }
-
-.currentPrice {
+.currentPrice{
   padding-top: 9%;
-  font-size: 40rpx;
+  font-size:40rpx;
   font-weight: 800;
   color: #ff441a;
 }
-
-.originalPrice {
+.originalPrice{
   font-size: 25rpx;
   font-style: italic;
-  text-decoration: line-through;
+  text-decoration:line-through;
   font-weight: 400;
   padding-left: 5rpx;
   opacity: 0.8;
 }
-
-.introduction {
+.introduction{
   width: 55%;
   height: 80%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-  font-family: microsoft yahei;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  text-overflow:ellipsis; 
+  -webkit-box-orient:vertical;
+  word-break:break-all;
+  font-family:microsoft yahei;
 }
-
-.goodTitle {
+.goodTitle{
   font-size: 25rpx;
   font-weight: 800;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-  font-family: microsoft yahei;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  overflow:hidden;
+  text-overflow:ellipsis; 
+  -webkit-box-orient:vertical;
+  word-break:break-all;
+  font-family:microsoft yahei;
 }
-
-.detail {
+.detail{
   font-size: 20rpx;
 }
-
-.circleContainer {
+.circleContainer{
   position: absolute;
   width: 12vw;
-  height: 12vw;
+  height: 12vw ;
   border-radius: 100%;
   background-color: white;
   z-index: 1000;
   bottom: 17%;
   left: 5%;
 }
-
-.circleContainer image {
+.circleContainer image{
   width: 12vw;
-  height: 12vw;
+  height: 12vw ;
   border-radius: 100%;
-}
-
-.addGoods {
-  width: 18%;
-  height: 18vw;
-  border-radius: 100%;
-  box-shadow: 0px 2px 20px 1px rgb(132, 135, 116);
-  background-color: #ffa726;
-  position: fixed;
-  bottom: 0;
-  z-index: 10000;
-  font-size: large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
 }
