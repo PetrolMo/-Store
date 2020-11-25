@@ -1,0 +1,6 @@
+<!--pages/message/message.wxml-->
+<van-empty
+  class="custom-image"
+  image="/images/07.png"
+  description="别催，给你🐎下葬呢"
+/>

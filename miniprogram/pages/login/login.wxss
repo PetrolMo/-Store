@@ -1,0 +1,24 @@
+/* pages/login/login.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50%;
+}
+.illustrate{
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 150%;
+}
+.image{
+  position: relative;
+  top: -55rpx;
+}
+button{
+  background-color: #F6902C;
+  width: 250rpx !important;
+}

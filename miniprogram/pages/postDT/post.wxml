@@ -1,0 +1,6 @@
+<!--miniprogram/pages/postDT/post.wxml-->
+<van-empty
+  class="custom-image"
+  image="/images/06.png"
+  description="还没做好呢！"
+/>
