@@ -1,13 +1,4 @@
-<van-search class="search" value="{{ value }}" shape="round" placeholder="请输入搜索关键词" use-action-slot show-action
-  bind:change="onChange" bind:search="onSearch" bind:cancel="onCancel">
-  <view slot="action" bind:tap="onSearch">搜索</view>
-</van-search>
-<van-notice-bar
-  left-icon="volume-o"
-  text="商品名称不要太长，不要发黄图，不要太贵。"
-  mode="closeable"
-  speed="30"
-/>
+
 <view class="toTop" hidden='{{!floorstatus}}' bindtap="goTop">
 <image src="../../images/toTop.png"></image>
 </view>

@@ -18,7 +18,9 @@
     "pages/mine/mine",
     "pages/mine/modifyInfo/modifyInfo",
     "pages/home/postGoods/postGoods",
+    "pages/searchList/searchList",
     "pages/postGoods/postGoods"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
