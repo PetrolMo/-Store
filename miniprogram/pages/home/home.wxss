@@ -100,6 +100,7 @@ page{
 .introduction{
   width: 55%;
   height: 80%;
+  padding: 5%;
   display:-webkit-box;
   -webkit-line-clamp:2;
   overflow:hidden;
@@ -109,10 +110,10 @@ page{
   font-family:microsoft yahei;
 }
 .goodTitle{
-  font-size: 25rpx;
+  font-size: 30rpx;
   font-weight: 800;
   display:-webkit-box;
-  -webkit-line-clamp:1;
+  -webkit-line-clamp:2;
   overflow:hidden;
   text-overflow:ellipsis; 
   -webkit-box-orient:vertical;

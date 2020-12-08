@@ -145,6 +145,13 @@ Page({
       }
     })
   },
+  goToDetail(e){
+    const key = e.currentTarget.dataset.prop
+    let good = JSON.stringify(this.data.goodList[key])
+    wx.navigateTo({
+      url: '/pages/goodDetail/goodDetail?good='+good,
+    })
+  },
   onLoad: function () {
     this.getData()
   },

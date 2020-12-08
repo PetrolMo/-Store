@@ -13,7 +13,10 @@
     "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-action-sheet": "@vant/weapp/action-sheet/index",
     "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index"
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index"
   },
   "pages": [
     "pages/home/home",
@@ -24,8 +27,8 @@
     "pages/mine/modifyInfo/modifyInfo",
     "pages/home/postGoods/postGoods",
     "pages/searchList/searchList",
-    "pages/postGoods/postGoods"
-
+    "pages/postGoods/postGoods",
+    "pages/goodDetail/goodDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

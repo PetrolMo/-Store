@@ -1,0 +1,8 @@
+/* miniprogram/pages/goodDetail/goodDetail.wxss */
+  swiper {
+      height: 70vw;
+      text-align: center;
+  }
+  swiper image {
+    width: 60%;
+}

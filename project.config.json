@@ -91,6 +91,12 @@
         {
           "name": "聊天",
           "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/goodDetail/goodDetail",
           "scene": null
         }
       ]
