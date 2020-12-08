@@ -5,22 +5,139 @@ Page({
   data: {
     floorstatus: false,
     goodList: [],
-    search_list: []
+    search_list: [],
+    option1: [{
+        text: '全部商品',
+        value: 0
+      },
+      {
+        text: '二手书籍',
+        value: 1
+      },
+      {
+        text: '电子产品',
+        value: 2
+      },
+      {
+        text: '体育器械',
+        value: 3
+      },
+      {
+        text: '生活用品',
+        value: 4
+      },
+      {
+        text: '其他类别',
+        value: 5
+      },
+    ],
+    option2: [
+      {
+        text: '全部校区',
+        value: 'a'
+      },
+      {
+        text: '四平路校区',
+        value: 'b'
+      },
+      {
+        text: '嘉定校区',
+        value: 'c'
+      },
+      {
+        text: '沪西校区',
+        value: 'd'
+      },
+      {
+        text: '彰武路校区',
+        value: 'e'
+      }
+    ],
+    value1: 0,
+    value2: 'a',
+    value11: 0,
+    value22: 'a'
   },
-  getData(dataBaseName = "goodList", skipNumber = 0, needNumber = 9) {
+  switchType(e) {
+    switch (e) {
+      case 0:{
+        return "全部商品"
+      }
+      case 1:{
+        return "二手书籍"
+      }
+      case 2:{
+        return "电子产品"
+      }
+      case 3:{
+        return "体育器械"
+      }
+      case 4:{
+        return "生活用品"
+      }
+      case 5:{
+        return "其他"
+      }
+      case 'a':{
+        return "全部校区"
+      }
+      case 'b':{
+        return "四平路校区"
+      }
+      case 'c':{
+        return "嘉定校区"
+      }
+      case 'd':{
+        return "沪西校区"
+      }
+      case 'e':{
+        return "彰武路校区"
+      }
+    }
+  },
+  getData2(dataBaseName = "goodList", skipNumber = 0, needNumber = 9, value1 = 0, value2 = 'a') {
+    let type = this.switchType(value1);
+    let campus = this.switchType(value2);
+    console.log(type,campus)
     wx.cloud.callFunction({
       name: "getDataFromGoodLists",
       data: {
         databaseName: dataBaseName,
         skipNumber: skipNumber,
-        needNumber: needNumber
+        needNumber: needNumber,
+        type: type,
+        campus: campus
       },
       success: _res => {
-        console.log("调用商品信息成功", _res)
+        console.log("触底调用商品信息成功", _res)
         var oldGoodList = this.data.goodList
         var newGoodList = oldGoodList.concat(_res.result.data)
         this.setData({
           goodList: newGoodList
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+  },
+  getData(dataBaseName = "goodList", skipNumber = 0, needNumber = 9, value1 = 0, value2 = 'a'){
+    let type = this.switchType(value1);
+    let campus = this.switchType(value2);
+    console.log(type,campus)
+    wx.cloud.callFunction({
+      name: "getDataFromGoodLists",
+      data: {
+        databaseName: dataBaseName,
+        skipNumber: skipNumber,
+        needNumber: needNumber,
+        type: type,
+        campus: campus
+      },
+      success: _res => {
+        console.log("初次调用商品信息成功", _res)
+        this.setData({
+          goodList: _res.result.data
         })
       },
       fail: err => {
@@ -89,7 +206,19 @@ Page({
       value: e.detail,
     });
   },
- 
+  onSwitch1Change(e) {
+    if ([e.currentTarget.dataset.prop] == "value1") {
+      this.setData({
+        value11: e.detail
+      })
+    } else {
+      this.setData({
+        value22: e.detail
+      })
+    }
+    this.getData("goodList",0, 9, this.data.value11, this.data.value22)
+    console.log()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -102,7 +231,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad()
   },
 
   /**
@@ -128,7 +257,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getData("goodList", this.data.goodList.length, 3)
+    this.getData2("goodList", this.data.goodList.length, 9, this.data.value11, this.data.value22)
     console.log(this.data.goodList)
   },
 

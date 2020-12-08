@@ -21,6 +21,19 @@ Page({
     userInfo: {},//用户信息
     imgs: [], //本地图片地址数组
     picPaths: [], //网络路径
+    actions: [
+      {
+        name: '四平路校区',
+      },
+      {
+        name: '嘉定校区',
+      },
+      {
+        name: '彰武路校区',
+      }
+    ],
+    campus:'',
+    down:''
   },
   //更换头像
   chooseImageTap() {
@@ -39,6 +52,24 @@ Page({
       },
       fail: console.error
     })
+  },
+  onClick(){
+    this.setData({
+      down:"down",
+      show:true
+    })
+  },
+  onClose1() {
+    this.setData({ show: false , down:''});
+  },
+
+  onSelect1(event) {
+    this.setData({
+      campus:event.detail.name,
+      ['userInfo.campus'] : event.detail.name,
+      down:""
+    })
+    console.log(this.data.campus)
   },
 
   // 图片本地路径

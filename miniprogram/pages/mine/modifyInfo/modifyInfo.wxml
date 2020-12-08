@@ -21,6 +21,10 @@
     border="{{ true }}"
     bind:change="onChange"
   />
+  <van-cell title="校区" center= "true"  is-link value="{{campus}}" arrow-direction="{{down}}"
+    clickable="true" bind:click="onClick"/>
+  <van-action-sheet title="请选择校区" z-index="100000" show="{{ show }}" actions="{{ actions }}" bind:close="onClose1"
+    bind:select="onSelect1" />
   <van-field
     value="{{ tel }}"
     auto-focus = "false"

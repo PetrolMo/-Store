@@ -12,7 +12,8 @@ Page({
     price:'',
     vita:'',
     title:'',
-    type:[],
+    campus:'',
+    type:["全部商品"],
     textareaSize:{
       maxHeight: 150, minHeight: 80
     },
@@ -20,7 +21,37 @@ Page({
     show2:false,
     show3:false,
     show4:false,
-    show5:false
+    show5:false,
+    show: false,
+    down:"",
+    actions: [
+      {
+        name: '四平路校区',
+      },
+      {
+        name: '嘉定校区',
+      },
+      {
+        name: '彰武路校区',
+      }
+    ]
+  },
+  onClick(){
+    this.setData({
+      down:"down",
+      show:true
+    })
+  },
+  onClose1() {
+    this.setData({ show: false , down:''});
+  },
+
+  onSelect1(event) {
+    this.setData({
+      campus:event.detail.name,
+      down:""
+    })
+    console.log(this.data.campus)
   },
   onChange(e){
     if([e.currentTarget.dataset.prop] == "goodTitle"){
@@ -202,6 +233,7 @@ Page({
     let price = this.data.price
     let imgList = this.data.imgList
     let title = this.data.title
+    let typeLsit = this.data.type;
     wx.showLoading({
       title: '发布中',
     })
@@ -219,10 +251,24 @@ Page({
       })
       return
     }
+    if(price > 9999){
+      wx.showToast({
+        icon: "none",
+        title: '太贵了'
+      })
+      return
+    }
     if (!imgList || imgList.length < 1) {
       wx.showToast({
         icon: "none",
         title: '请选择图片'
+      })
+      return
+    }
+    if(typeLsit.length <= 1){
+      wx.showToast({
+        icon: "none",
+        title: '请选择类别'
       })
       return
     }
@@ -257,6 +303,7 @@ Page({
           date: Date.parse(new Date()),
           createTime: wx.cloud.database().serverDate(),
           title: this.data.title,
+          campus:this.data.campus,
           images: this.data.imgList,
           price:this.data.price,
           type:this.data.type,
